@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B8CD6BD-2B67-4EC1-B324-D27DB86A540D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DocReader</RootNamespace>
+    <AssemblyName>DocReader</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonTranslatorLib\AbstractOpenXmlMapping.cs" />
+    <Compile Include="CommonTranslatorLib\BinaryDocument.cs" />
+    <Compile Include="CommonTranslatorLib\IMapping.cs" />
+    <Compile Include="CommonTranslatorLib\IVisitable.cs" />
+    <Compile Include="DocFileFormat\AnnotationOwnerList.cs" />
+    <Compile Include="DocFileFormat\AnnotationReferenceDescriptor.cs" />
+    <Compile Include="DocFileFormat\AnnotationReferenceDescriptorExtra.cs" />
+    <Compile Include="DocFileFormat\AnnotationReferenceExtraTable.cs" />
+    <Compile Include="DocFileFormat\AuthorTable.cs" />
+    <Compile Include="DocFileFormat\AutoNumberedListDataDescriptor.cs" />
+    <Compile Include="DocFileFormat\AutoNumberLevelDescriptor.cs" />
+    <Compile Include="DocFileFormat\AutoSummaryInfo.cs" />
+    <Compile Include="DocFileFormat\BookmarkFirst.cs" />
+    <Compile Include="DocFileFormat\BorderCode.cs" />
+    <Compile Include="DocFileFormat\BreakDescriptor.cs" />
+    <Compile Include="DocFileFormat\ByteParseException.cs" />
+    <Compile Include="DocFileFormat\ByteStructure.cs" />
+    <Compile Include="DocFileFormat\CharacterProperties.cs" />
+    <Compile Include="DocFileFormat\CharacterPropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\CharacterRange.cs" />
+    <Compile Include="DocFileFormat\CommandIdentifier.cs" />
+    <Compile Include="DocFileFormat\CommandTable.cs" />
+    <Compile Include="DocFileFormat\CommentAuthorTable.cs" />
+    <Compile Include="DocFileFormat\CustomToolbar.cs" />
+    <Compile Include="DocFileFormat\CustomToolbarWrapper.cs" />
+    <Compile Include="DocFileFormat\DateAndTime.cs" />
+    <Compile Include="DocFileFormat\DocumentProperties.cs" />
+    <Compile Include="DocFileFormat\DocumentTypographyInfo.cs" />
+    <Compile Include="DocFileFormat\DrawingObjectGrid.cs" />
+    <Compile Include="DocFileFormat\DropCapSpecifier.cs" />
+    <Compile Include="DocFileFormat\FileInformationBlock.cs" />
+    <Compile Include="DocFileFormat\FileShapeAddress.cs" />
+    <Compile Include="DocFileFormat\FontFamilyName.cs" />
+    <Compile Include="DocFileFormat\FormattedDiskPage.cs" />
+    <Compile Include="DocFileFormat\FormattedDiskPageCHPX.cs" />
+    <Compile Include="DocFileFormat\FormattedDiskPagePAPX.cs" />
+    <Compile Include="DocFileFormat\FormFieldData.cs" />
+    <Compile Include="DocFileFormat\Global.cs" />
+    <Compile Include="DocFileFormat\HeaderAndFooterTable.cs" />
+    <Compile Include="DocFileFormat\InvalidFileException.cs" />
+    <Compile Include="DocFileFormat\KeyMapEntry.cs" />
+    <Compile Include="DocFileFormat\LanguageId.cs" />
+    <Compile Include="DocFileFormat\LineSpacingDescriptor.cs" />
+    <Compile Include="DocFileFormat\ListData.cs" />
+    <Compile Include="DocFileFormat\ListFormatOverride.cs" />
+    <Compile Include="DocFileFormat\ListFormatOverrideLevel.cs" />
+    <Compile Include="DocFileFormat\ListFormatOverrideTable.cs" />
+    <Compile Include="DocFileFormat\ListLevel.cs" />
+    <Compile Include="DocFileFormat\ListTable.cs" />
+    <Compile Include="DocFileFormat\MacroData.cs" />
+    <Compile Include="DocFileFormat\NilPicfAndBinData.cs" />
+    <Compile Include="DocFileFormat\NumberRevisionMarkData.cs" />
+    <Compile Include="DocFileFormat\OfficeArtContent.cs" />
+    <Compile Include="DocFileFormat\OfficeDrawingTable.cs" />
+    <Compile Include="DocFileFormat\OleObject.cs" />
+    <Compile Include="DocFileFormat\OutlineLiSTData.cs" />
+    <Compile Include="DocFileFormat\ParagraphHeight.cs" />
+    <Compile Include="DocFileFormat\ParagraphProperties.cs" />
+    <Compile Include="DocFileFormat\ParagraphPropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\PictureBulletInformation.cs" />
+    <Compile Include="DocFileFormat\PictureDescriptor.cs" />
+    <Compile Include="DocFileFormat\PieceDescriptor.cs" />
+    <Compile Include="DocFileFormat\PieceTable.cs" />
+    <Compile Include="DocFileFormat\Plex.cs" />
+    <Compile Include="DocFileFormat\PropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\SectionDescriptor.cs" />
+    <Compile Include="DocFileFormat\SectionPropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\ShadingDescriptor.cs" />
+    <Compile Include="DocFileFormat\SinglePropertyModifier.cs" />
+    <Compile Include="DocFileFormat\SprmTDefTable.cs" />
+    <Compile Include="DocFileFormat\StringTable.cs" />
+    <Compile Include="DocFileFormat\StyleSheet.cs" />
+    <Compile Include="DocFileFormat\StyleSheetDescription.cs" />
+    <Compile Include="DocFileFormat\StyleSheetInformation.cs" />
+    <Compile Include="DocFileFormat\TabDescriptor.cs" />
+    <Compile Include="DocFileFormat\TablePropertyExceptions.cs" />
+    <Compile Include="DocFileFormat\TextBoundary.cs" />
+    <Compile Include="DocFileFormat\TextMark.cs" />
+    <Compile Include="DocFileFormat\ToolbarControl.cs" />
+    <Compile Include="DocFileFormat\ToolbarControlBitmap.cs" />
+    <Compile Include="DocFileFormat\ToolbarCustomization.cs" />
+    <Compile Include="DocFileFormat\ToolbarDelta.cs" />
+    <Compile Include="DocFileFormat\WordDocument.cs" />
+    <Compile Include="DocReader.cs" />
+    <Compile Include="OfficeDrawing\BitmapBlip.cs" />
+    <Compile Include="OfficeDrawing\BlipBooleanProperties.cs" />
+    <Compile Include="OfficeDrawing\BlipStoreContainer.cs" />
+    <Compile Include="OfficeDrawing\BlipStoreEntry.cs" />
+    <Compile Include="OfficeDrawing\ChildAnchor.cs" />
+    <Compile Include="OfficeDrawing\ClientAnchor.cs" />
+    <Compile Include="OfficeDrawing\ClientData.cs" />
+    <Compile Include="OfficeDrawing\ClientTextbox.cs" />
+    <Compile Include="OfficeDrawing\DiagramBooleans.cs" />
+    <Compile Include="OfficeDrawing\DrawingContainer.cs" />
+    <Compile Include="OfficeDrawing\DrawingGroup.cs" />
+    <Compile Include="OfficeDrawing\DrawingGroupRecord.cs" />
+    <Compile Include="OfficeDrawing\DrawingRecord.cs" />
+    <Compile Include="OfficeDrawing\Exceptions.cs" />
+    <Compile Include="OfficeDrawing\FillStyleBooleanProperties.cs" />
+    <Compile Include="OfficeDrawing\GeometryBooleans.cs" />
+    <Compile Include="OfficeDrawing\GeometryTextBooleanProperties.cs" />
+    <Compile Include="OfficeDrawing\GroupContainer.cs" />
+    <Compile Include="OfficeDrawing\GroupShapeBooleans.cs" />
+    <Compile Include="OfficeDrawing\GroupShapeRecord.cs" />
+    <Compile Include="OfficeDrawing\LineStyleBooleans.cs" />
+    <Compile Include="OfficeDrawing\MetafilePictBlip.cs" />
+    <Compile Include="OfficeDrawing\OfficeRecordAttribute.cs" />
+    <Compile Include="OfficeDrawing\OfficeShapeTypeAttribute.cs" />
+    <Compile Include="OfficeDrawing\PathParser.cs" />
+    <Compile Include="OfficeDrawing\PathSegment.cs" />
+    <Compile Include="OfficeDrawing\ProtectionBooleans.cs" />
+    <Compile Include="OfficeDrawing\Record.cs" />
+    <Compile Include="OfficeDrawing\RegularContainer.cs" />
+    <Compile Include="OfficeDrawing\ShadowStyleBooleanProperties.cs" />
+    <Compile Include="OfficeDrawing\Shape.cs" />
+    <Compile Include="OfficeDrawing\ShapeContainer.cs" />
+    <Compile Include="OfficeDrawing\ShapeOptions.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentBorderCallout1Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentBorderCallout2Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentBorderCallout3Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentBorderCallout90Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentCallout1Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentCallout2Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentCallout3Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\AccentCallout90Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\ActionButtonBlank.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\ArcType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BentArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BentUpArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BevelType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BlockArcType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BorderCallout1Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BorderCallout2Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BorderCallout3Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BorderCallout90Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BracePairType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\BracketPairType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Callout1Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Callout2Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Callout3Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Callout90Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CanType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\ChevronType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CircularArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CloudCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CubeType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CurvedDownArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CurvedLeftArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CurvedRightArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\CurvedUpArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\DiamondType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\DonutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\DoubleWaveType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\DownArrowCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\DownArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\EllipsedRibbon2Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\EllipseRibbonType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartAlternateProcessType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartCollateType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartConnectorType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartDecisionType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartDelayType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartDisplayType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartDocumentType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartExtractType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartInputOutputType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartInternalStorageType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartMagneticDiskType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartMagneticDrumType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartMagneticTapeType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartManualInputType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartManualOperationType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartMergeType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartMultidocumentType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartOffpageConnectorType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartOnlineStorageType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartOrType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartPredefinedProcessType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartPreparationType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartProcessType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartPunchedCardType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartPunchedTapeType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartSortType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartSummingJunctionType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FlowChartTerminatorType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\FoldedCornerType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\HeartType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\HexagonType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\HomePlateType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\HorizontalScrollType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\IrregularSealOneType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\IrregularSealTwo.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\IsoscelesTriangleType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftArrowCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftBraceType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftBracketType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftRightArrowCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftRightArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftRightUpArrow.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LeftUpArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LightningBoltType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\LineType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\MoonType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\NoSmokingType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\NotchedRightArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\OctagonType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\OvalType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\ParallelogramType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\PentagonType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\PictureFrameType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\PlaqueType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\PlusType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\QuadArrowCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\QuadArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RectangleType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RibbonDownType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RibbonUpType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RightArrowCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RightArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RightBracetype.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RightBracketType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RightTriangleType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\RoundedRectangleType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Seal16Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Seal24Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Seal32Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Seal4Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Seal8Type.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\ShapeType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\SmileyFaceType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\Startype.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\StraightConnectorType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\StripedRightArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\SunType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextArchUpCurve.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextArchUpPour.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextboxType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextCanDown.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextCascadeUp.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextCirclePour.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextCurveDown.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextCurveUp.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextDeflate.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextDeflateBottom.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextDeflateInflate.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextFadeUp.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextPlainText.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextRingInside.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextSlantUp.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextStop.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextTriangle.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextWave1.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextWave3.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TextWave4.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\TrapezoidType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\UpArrowCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\UpArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\UpDownArrowCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\UpDownArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\UturnArrowType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\VerticalScrollType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\WaveType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\WedgeEllipseCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\WedgeRectCalloutType.cs" />
+    <Compile Include="OfficeDrawing\Shapetypes\WedgeRoundedRectCalloutType.cs" />
+    <Compile Include="OfficeDrawing\SolverContainer.cs" />
+    <Compile Include="OfficeDrawing\TextBooleanProperties.cs" />
+    <Compile Include="OfficeDrawing\ThreeDObjectBooleanProperties.cs" />
+    <Compile Include="OfficeDrawing\ThreeDStyleBooleanProperties.cs" />
+    <Compile Include="OfficeDrawing\UnknownRecord.cs" />
+    <Compile Include="OfficeDrawing\XmlRecord.cs" />
+    <Compile Include="OfficeDrawing\XmlStringAtom.cs" />
+    <Compile Include="OpenXmlLib\AppPropertiesPart.cs" />
+    <Compile Include="OpenXmlLib\ContentPart.cs" />
+    <Compile Include="OpenXmlLib\ContentTypes.cs" />
+    <Compile Include="OpenXmlLib\CorePropertiesPart.cs" />
+    <Compile Include="OpenXmlLib\CustomXmlPart.cs" />
+    <Compile Include="OpenXmlLib\CustomXmlPropertiesPart.cs" />
+    <Compile Include="OpenXmlLib\EmbeddedObjectPart.cs" />
+    <Compile Include="OpenXmlLib\ExternalRelationship.cs" />
+    <Compile Include="OpenXmlLib\ImagePart.cs" />
+    <Compile Include="OpenXmlLib\OpenXmlPackage.cs" />
+    <Compile Include="OpenXmlLib\OpenXmlPart.cs" />
+    <Compile Include="OpenXmlLib\OpenXmlPartContainer.cs" />
+    <Compile Include="OpenXmlLib\ThemePart.cs" />
+    <Compile Include="OpenXmlLib\VbaDataPart.cs" />
+    <Compile Include="OpenXmlLib\VbaProjectPart.cs" />
+    <Compile Include="OpenXmlLib\VmlPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\CommentsPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\EndnotesPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\FontTablePart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\FooterPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\FootnotesPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\GlossaryPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\HeaderPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\KeyMapCustomizationsPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\MainDocumentPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\NumberingDefinitionsPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\SettingsPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\StyleDefinitionsPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\ToolbarsPart.cs" />
+    <Compile Include="OpenXmlLib\WordprocessingML\WordprocessingDocument.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StructuredStorage\Common\AbstractDirectoryEntry.cs" />
+    <Compile Include="StructuredStorage\Common\AbstractHeader.cs" />
+    <Compile Include="StructuredStorage\Common\AbstractIOHandler.cs" />
+    <Compile Include="StructuredStorage\Common\Exceptions.cs" />
+    <Compile Include="StructuredStorage\Common\GlobalDefines.cs" />
+    <Compile Include="StructuredStorage\Common\InternalBitConverter.cs" />
+    <Compile Include="StructuredStorage\Common\MaskingHandler.cs" />
+    <Compile Include="StructuredStorage\Reader\AbstractFat.cs" />
+    <Compile Include="StructuredStorage\Reader\DirectoryEntry.cs" />
+    <Compile Include="StructuredStorage\Reader\DirectoryTree.cs" />
+    <Compile Include="StructuredStorage\Reader\Fat.cs" />
+    <Compile Include="StructuredStorage\Reader\Header.cs" />
+    <Compile Include="StructuredStorage\Reader\InputHandler.cs" />
+    <Compile Include="StructuredStorage\Reader\IStreamReader.cs" />
+    <Compile Include="StructuredStorage\Reader\IStructuredStorageReader.cs" />
+    <Compile Include="StructuredStorage\Reader\MiniFat.cs" />
+    <Compile Include="StructuredStorage\Reader\StructuredStorageReader.cs" />
+    <Compile Include="StructuredStorage\Reader\VirtualStream.cs" />
+    <Compile Include="StructuredStorage\Reader\VirtualStreamReader.cs" />
+    <Compile Include="Tools\EmuValue.cs" />
+    <Compile Include="Tools\FixedPointNumber.cs" />
+    <Compile Include="Tools\PtValue.cs" />
+    <Compile Include="Tools\RGBColor.cs" />
+    <Compile Include="Tools\TraceLogger.cs" />
+    <Compile Include="Tools\TwipsValue.cs" />
+    <Compile Include="Tools\Utils.cs" />
+    <Compile Include="WordprocessingMLMapping\ApplicationPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\CharacterPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\CommandTableMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\CommentsMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\ConversionContext.cs" />
+    <Compile Include="WordprocessingMLMapping\Converter.cs" />
+    <Compile Include="WordprocessingMLMapping\DateMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\DocumentMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\EndnotesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\Field.cs" />
+    <Compile Include="WordprocessingMLMapping\FontTableMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\FooterMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\FootnotesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\FormFieldDataMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\GlossaryMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\HeaderMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\LanguageIdMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\MacroDataMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\MainDocumentMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\MappingException.cs" />
+    <Compile Include="WordprocessingMLMapping\NumberingMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\ParagraphPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\PropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\RevisionData.cs" />
+    <Compile Include="WordprocessingMLMapping\SectionPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\SettingsMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\StyleSheetMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TableCellPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TableInfo.cs" />
+    <Compile Include="WordprocessingMLMapping\TablePropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TableRowPropertiesMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\TextboxMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\VMLPictureMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\VMLShapeMapping.cs" />
+    <Compile Include="WordprocessingMLMapping\VMLShapeTypeMapping.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
