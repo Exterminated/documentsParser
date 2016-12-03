@@ -108,6 +108,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="DocReader\DocReader\DocReader.csproj">
+      <Project>{9B8CD6BD-2B67-4EC1-B324-D27DB86A540D}</Project>
+      <Name>DocReader</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
