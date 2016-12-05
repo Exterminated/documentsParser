@@ -54,7 +54,7 @@
             // replace_button
             // 
             this.replace_button.Enabled = false;
-            this.replace_button.Location = new System.Drawing.Point(382, 43);
+            this.replace_button.Location = new System.Drawing.Point(382, 42);
             this.replace_button.Name = "replace_button";
             this.replace_button.Size = new System.Drawing.Size(133, 23);
             this.replace_button.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 85);
+            this.ClientSize = new System.Drawing.Size(525, 86);
             this.Controls.Add(this.replace_button);
             this.Controls.Add(this.logBox);
             this.Controls.Add(this.open_button);
