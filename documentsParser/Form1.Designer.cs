@@ -58,7 +58,7 @@
             this.replace_button.Name = "replace_button";
             this.replace_button.Size = new System.Drawing.Size(133, 23);
             this.replace_button.TabIndex = 3;
-            this.replace_button.Text = "Заменить";
+            this.replace_button.Text = "Конвертировать";
             this.replace_button.UseVisualStyleBackColor = true;
             this.replace_button.Click += new System.EventHandler(this.replace_button_Click);
             // 
